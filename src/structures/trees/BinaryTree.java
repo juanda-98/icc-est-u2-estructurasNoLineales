@@ -116,19 +116,36 @@ public class BinaryTree<T extends Comparable<T>> {
 
     }
 
+
     private void printTreeRecursivo(Node<Integer> actual, int nivel) {
+        if (actual == null) return;
+        
+        printTreeRecursivo(actual.getRight(), nivel + 1);
+        
+        for (int i = 0; i < nivel; i++) {
+            System.out.print("\t");
+        }
+        System.out.println(actual.getValue());
+        
+        printTreeRecursivo(actual.getLeft(), nivel + 1);
+    }
+
+    public void invertirTree(Node<Integer> root) {
+        System.out.println("Imprimir el árbol:");
+        printTreeRecursivo(root, 0);
+
+    }
+
+    private void invertirTreeRecursivo(Node<T> actual, int nivel) {
     if (actual == null) return;
-    
-    // Primero el subárbol derecho (aparece arriba en consola)
-    printTreeRecursivo(actual.getRight(), nivel + 1);
-    
-    // Imprimir tabulaciones según el nivel
+
+    invertirTreeRecursivo(actual.getLeft(), nivel + 1);  // ← izquierdo primero
+
     for (int i = 0; i < nivel; i++) {
         System.out.print("\t");
     }
     System.out.println(actual.getValue());
-    
-    // Luego el subárbol izquierdo
-    printTreeRecursivo(actual.getLeft(), nivel + 1);
+
+    invertirTreeRecursivo(actual.getRight(), nivel + 1); // ← derecho después
 }
 }

@@ -14,6 +14,10 @@ public class App {
         Ejercicio1 ejercicio1 = new Ejercicio1();
         int[] numeros = {5, 3, 7, 2, 4, 6, 8};
         ejercicio1.insert(numeros);
+        System.out.println("---In-Order---");
+        ejercicio1.inOrder();
+        System.out.println("Imprimir el árbol:");
+        ejercicio1.printTree(ejercicio1.getRoot());
         
     }
 
