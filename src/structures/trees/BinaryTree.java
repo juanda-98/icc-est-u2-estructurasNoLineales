@@ -110,14 +110,12 @@ public class BinaryTree<T extends Comparable<T>> {
         return heightLeft + heightRight + 1;
     }
 
-    public void printTree(Node<Integer> root) {
+    //Impresion de arbol en estructura horizantal
+    public void printTree() {
         System.out.println("Imprimir el árbol:");
         printTreeRecursivo(root, 0);
-
     }
-
-
-    private void printTreeRecursivo(Node<Integer> actual, int nivel) {
+    private void printTreeRecursivo(Node<T> actual, int nivel) {
         if (actual == null) return;
         
         printTreeRecursivo(actual.getRight(), nivel + 1);
@@ -130,22 +128,4 @@ public class BinaryTree<T extends Comparable<T>> {
         printTreeRecursivo(actual.getLeft(), nivel + 1);
     }
 
-    public void invertirTree(Node<Integer> root) {
-        System.out.println("Imprimir el árbol:");
-        printTreeRecursivo(root, 0);
-
-    }
-
-    private void invertirTreeRecursivo(Node<T> actual, int nivel) {
-    if (actual == null) return;
-
-    invertirTreeRecursivo(actual.getLeft(), nivel + 1);  // ← izquierdo primero
-
-    for (int i = 0; i < nivel; i++) {
-        System.out.print("\t");
-    }
-    System.out.println(actual.getValue());
-
-    invertirTreeRecursivo(actual.getRight(), nivel + 1); // ← derecho después
-}
 }

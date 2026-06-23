@@ -1,24 +1,53 @@
+import java.util.List;
+
 import models.Persona;
 import structures.trees.BinaryTree;
 import structures.trees.Ejercicio1;
+import structures.trees.Ejercicio2;
+import structures.trees.Ejercicio3;
+import structures.trees.Ejercicio4;
 import structures.trees.InTree;
 
 public class App {
     public static void main(String[] args) throws Exception {
         runInTree();
         runBinaryTree();
-        runejercicio();
+        runejercicios();
     }
 
-    private static void runejercicio() {
+    private static void runejercicios() {
+        System.out.println("=== Ejercicio 1 ===");
         Ejercicio1 ejercicio1 = new Ejercicio1();
         int[] numeros = {5, 3, 7, 2, 4, 6, 8};
         ejercicio1.insert(numeros);
-        System.out.println("---In-Order---");
-        ejercicio1.inOrder();
-        System.out.println("Imprimir el árbol:");
-        ejercicio1.printTree(ejercicio1.getRoot());
-        
+
+        System.out.println("=== Ejercicio 2 === ");
+        BinaryTree<Integer> arbol = new BinaryTree<>();
+        arbol.add(4);
+        arbol.add(2);
+        arbol.add(7);
+        arbol.add(1);
+        arbol.add(3);
+        arbol.add(6);
+        arbol.add(9);
+        arbol.printTree();
+        Ejercicio2 ejercicio2 = new Ejercicio2();
+        ejercicio2.invertTree(arbol.getRoot());
+        arbol.printTree();
+
+        System.out.println("=== Ejercicio 3 ===");
+        Ejercicio3 ejercicio3 = new Ejercicio3();
+        List<List<Integer>> levels = ejercicio3.listLevels(arbol.getRoot());
+
+        for (int i = 0; i < levels.size(); i++) {
+            System.out.println(levels.get(i));
+        }
+
+        System.out.println("=== Ejercicio 4 ===");
+        Ejercicio4 ejercicio4 = new Ejercicio4();
+        System.out.println(ejercicio4.profundidadArbol(arbol));
+
+
     }
 
     private static void runBinaryTree() {
