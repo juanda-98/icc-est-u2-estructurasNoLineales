@@ -1,21 +1,82 @@
 import java.util.List;
+import java.util.Set;
 
-import models.Persona;
+import collections.Sets;
+import collections.maps.Maps;
+import ejercicios.Ejercicio1;
+import ejercicios.Ejercicio2;
+import ejercicios.Ejercicio3;
+import ejercicios.Ejercicio4;
+import eva.PersonaController;
+import eva.Persona;
+import models.Contacto;
+// import models.Persona;
 import structures.trees.BinaryTree;
-import structures.trees.Ejercicio1;
-import structures.trees.Ejercicio2;
-import structures.trees.Ejercicio3;
-import structures.trees.Ejercicio4;
 import structures.trees.InTree;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        runInTree();
-        runBinaryTree();
-        runejercicios();
+        // runInTree();
+        // runBinaryTree();
+        // runEjercicios();
+        // runSets();
+        runEva();
     }
 
-    private static void runejercicios() {
+    private static void runEva() {
+        PersonaController personaController = new PersonaController();
+        Persona[] = personas;
+        personaController.filtrarYOrdenar(personas, 18);
+    }
+
+    private static void runSets() {
+        Sets sets = new Sets();
+        
+        // implementacion -> HashSet hashcode
+        System.out.println("* HashCode:");
+        Set<String> hashSet = sets.construirHashSet();
+        System.out.println(hashSet);
+        System.out.println("Size: " + hashSet.size());
+        System.out.println("Contains 'F': " + hashSet.contains("F"));
+
+        // implementacion -> LinkedHashSet
+        System.out.println("* LinkedHashSet: ");
+        Set<String> lSet = sets.construirLinkedHashSet();
+        System.out.println(lSet);
+        System.out.println("Size: " + lSet.size());
+        System.out.println("Contains 'F': " + lSet.contains("F"));
+        
+        // implementacion -> TreeSet
+        System.out.println("* TreeSet: ");
+        Set<String> treeSet = sets.construirTreeSet();
+        System.out.println(treeSet);
+        System.out.println("Size: " + treeSet.size());
+        System.out.println("Contains 'F': " + treeSet.contains("F"));
+        
+        // implementacion -> ContactoSet
+        System.out.println("* ContactoSet: ");
+        Set<Contacto> contactoSet = sets.contruirHashSetContacto();
+        System.out.println(contactoSet);
+        System.out.println("Size: " + contactoSet.size());
+        System.out.println("Contains 'Juan Perez': " + contactoSet.contains(new Contacto("Juan", "Perez", "123456789")));
+        
+        // implementacion -> TreeContactoSet
+        System.out.println("* TreeContactoSet: ");
+        Set<Contacto> treeContactoSet = sets.construirTreeSetContacto();
+        System.out.println(treeContactoSet);
+        System.out.println("Size: " + treeContactoSet.size());
+        System.out.println("Contains 'Juan Perez': " + treeContactoSet.contains(new Contacto("Juan", "Perez", "123456789")));
+        
+        // implementacion de mapa
+        System.out.println("* Mapas: ");
+        Maps maps = new Maps();
+        maps.construirHashMap();
+        maps.cTreeMap();
+
+    
+    }
+
+    private static void runEjercicios() {
         System.out.println("=== Ejercicio 1 ===");
         Ejercicio1 ejercicio1 = new Ejercicio1();
         int[] numeros = {5, 3, 7, 2, 4, 6, 8};

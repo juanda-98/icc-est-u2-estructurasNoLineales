@@ -1,4 +1,4 @@
-package structures.trees;
+package ejercicios;
 
 import structures.node.Node;
 
