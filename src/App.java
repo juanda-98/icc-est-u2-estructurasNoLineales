@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -8,9 +9,10 @@ import ejercicios.Ejercicio2;
 import ejercicios.Ejercicio3;
 import ejercicios.Ejercicio4;
 import eva.PersonaController;
-import eva.Persona;
+import eva.PersonaEva;
 import models.Contacto;
-// import models.Persona;
+import models.Persona;
+import structures.grafos.Graph;
 import structures.trees.BinaryTree;
 import structures.trees.InTree;
 
@@ -20,13 +22,60 @@ public class App {
         // runBinaryTree();
         // runEjercicios();
         // runSets();
-        runEva();
+        // runEva();
+        runGraph();
+    }
+
+    private static void runGraph() {
+        Graph<String> grafo = new Graph<>();
+        grafo.add("A");
+        grafo.add("B");
+        grafo.add("C");
+        grafo.add("D");
+        grafo.add("E");
+        grafo.add("K");
+        grafo.add("J");
+
+        grafo.addEdge("A", "B");
+        grafo.addEdge("A", "D");
+        grafo.addEdgeUni("A", "C");
+        grafo.addEdgeUni("B", "C");
+        grafo.addEdgeUni("C", "D");
+        grafo.addEdgeUni("C", "E");
+        grafo.addEdge("D", "J");
+        grafo.addEdge("E", "J");
+        grafo.addEdgeUni("E", "K");
+        grafo.addEdgeUni("K", "A");
+        grafo.print();
+
+        System.out.println("Con eliminados: ");
+        grafo.removeEdge("E", "J");
+        grafo.removeEdge("A", "B");
+        grafo.addEdgeUni("A", "B");
+        grafo.print();
+
+        System.out.println("Despues de eliminar node K");
+        grafo.removeNode("K");
+        grafo.print();
+
+        System.out.println("Total de direcciones: " + grafo.getDirecciones());
+        System.out.println("Total de conecciones: " + grafo.getConecciones());
     }
 
     private static void runEva() {
         PersonaController personaController = new PersonaController();
-        Persona[] = personas;
-        personaController.filtrarYOrdenar(personas, 18);
+        List<PersonaEva> personas = new ArrayList<>();
+        personas.add(new PersonaEva("Juan Perez", 19)); 
+        personas.add(new PersonaEva("juan perez", 19)); 
+        personas.add(new PersonaEva("Ana López", 30));
+        personas.add(new PersonaEva("Luis Gómez", 20));
+        personas.add(new PersonaEva("Bruno Díaz", 30));
+        Set<PersonaEva> resultado = personaController.filtrarYOrdenar(personas, 18);
+
+        for (PersonaEva personitas : resultado) {
+            System.out.println(personitas);
+        }
+
     }
 
     private static void runSets() {

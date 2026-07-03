@@ -140,6 +140,23 @@ public int getHeight() {
 ## Conclusion
 La práctica permitió aplicar árboles binarios en problemas concretos de inserción, inversión, recorrido y cálculo de profundidad. Y el uso de recursión simplifica notablemente la implementación de algoritmos sobre árboles.
 
+# Grafos
+En la clase Graph.java creamos la estructura para poder usar grafos.
 
+Tenemos metodos principales para anadir nodos y anadir conexiones entre nodos.
+Metodos:
+1. Creamos un nodo en el metodo y anadimos al HashMap antes creado que se llama nodes pero pusimos putIfAbsent para que no se repitan
+2. Creamos un metodo para agregar una conexion bidireccional creando dos nodos y obteniendo su Set<> de nodos y agragandolos entre si
+3. Se basa en lo mismo del anterior pero solo se agrega el primer el segundo nodo al primero.
+
+![metodosGrafos](src/assets/anadirGrafos.png)
+
+- Creamos un metodo para poder imprimir de manera legible el grafo en si y sus conexione entre nodos
+![print](src/assets/printGrafo.png)
+
+- Anadimos metodos para eliminar conexiones entre nodo y ademas otro metodo para eliminar el nodo elegible y eliminar tambien en todos los nodos sus conexiones con el nodo elegido.
+![remove](src/assets/removGrafo.png)
+
+- Por ultimo hicimos dos metodo que nos retornen entero. El primero nos retorna las direcciones entre nodos es decir cuando hay una conexion bidireccional solo se suma uno. El otro metodo que nos retorna todas la coneciones en si de todo el grafo, y vamos recorriendo todos los nodos y se suma el tamano de su set correspondiente.
 
 
