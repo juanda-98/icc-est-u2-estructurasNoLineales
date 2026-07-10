@@ -3,6 +3,8 @@ package eva;
 public class PersonaEva {
     private String nombre;
     private int edad;
+    
+
     public PersonaEva() {
     }
     public PersonaEva(String nombre, int edad) {

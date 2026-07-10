@@ -13,6 +13,8 @@ import eva.PersonaEva;
 import models.Contacto;
 import models.Persona;
 import structures.grafos.Graph;
+import structures.grafos.PathResult;
+import structures.grafos.implementations.DFSPathFinder;
 import structures.trees.BinaryTree;
 import structures.trees.InTree;
 
@@ -23,7 +25,32 @@ public class App {
         // runEjercicios();
         // runSets();
         // runEva();
-        runGraph();
+        // runGraph();
+        runDFSPathFinder();
+    }
+
+    private static void runDFSPathFinder() {
+        DFSPathFinder<String> dfs = new DFSPathFinder<>();
+        Graph<String> graph = new Graph<>();
+
+        graph.addEdge("A", "B");
+        graph.addEdge("B", "D");
+        graph.addEdgeUni("D", "E");
+        graph.addEdge("E", "F");
+
+        graph.addEdge("A", "C");
+        graph.addEdge("C", "J");
+        graph.addEdgeUni("K", "J");
+
+        graph.print();
+
+        PathResult<String> result = dfs.find(graph, "A", "F");
+        PathResult<String> result2 = dfs.find(graph, "A", "J");
+        PathResult<String> result3 = dfs.find(graph, "A", "K");
+        
+        System.out.println(result.toString());
+        System.out.println(result2.toString());
+        System.out.println(result3.toString());
     }
 
     private static void runGraph() {
@@ -75,6 +102,8 @@ public class App {
         for (PersonaEva personitas : resultado) {
             System.out.println(personitas);
         }
+
+        
 
     }
 

@@ -104,5 +104,9 @@ public class Graph<T> {
     return total;
     }
 
+    public Set<Node<T>> getVecinos(T currente) {
+        Node<T> nC = new Node<>(currente);
+        return nodes.getOrDefault(nC, new HashSet<>());
+    }
 
 }

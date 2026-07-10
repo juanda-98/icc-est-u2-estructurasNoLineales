@@ -159,4 +159,14 @@ Metodos:
 
 - Por ultimo hicimos dos metodo que nos retornen entero. El primero nos retorna las direcciones entre nodos es decir cuando hay una conexion bidireccional solo se suma uno. El otro metodo que nos retorna todas la coneciones en si de todo el grafo, y vamos recorriendo todos los nodos y se suma el tamano de su set correspondiente.
 
+## DFSPathFinder
+Para esta clase usamos una interfaz PathFinder y la clase de resultado PathResult.
+En esta clase principalmente usamos el metodo dfs
+![dfs](src/assets/dfs.png)
+Y lo comprobamos con tres ejemplos
+1. De A a F
+2. De A a J
+3. De A a K
+
+![salidaDfs](src/assets/salidaDfs.png)
 

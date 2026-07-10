@@ -31,16 +31,13 @@ public class PersonaController {
 
     public Map<String, Set<String>> agruparPorEdad(List<PersonaEva> personas) {
         Map<String, List<String>> resultado = new TreeMap<>();
+        Set<String> perNom = new TreeSet<>();
         for (PersonaEva p : personas) {
             String pNombre = p.getNombre().split(" ")[0];
+            perNom.add(pNombre);
             
         }
-        List<PersonaEva> personasE = new ArrayList<>();
-    personas.add(new PersonaEva("Juan Pérez", 25));    
-    personas.add(new PersonaEva("Juan Morales", 27));    
-    personas.add(new PersonaEva("Ana López", 45));  
-    personas.add(new PersonaEva("pedro alvarez", 35));   
-    personas.add(new PersonaEva("Sofía Ramos", 19));
+
 
         return null;
     }
